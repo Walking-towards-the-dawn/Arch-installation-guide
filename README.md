@@ -2,7 +2,9 @@
 
 This is a personal guide to install Arch linux with minimal Plasma DE. I must warn that this install is super minimal and does not contain many KDE apps like Kmail, Kalendar and KDE Connect!
 
-I am not a professional by any means and I made this quide just for personal use so I highly recommend you to read the official [`wiki`](https://wiki.archlinux.org/index.php/Installation_guide)!
+I am not a professional by any means and I made this quide just for personal use so I highly recommend you to read the official [`Installation_guide - Arch wiki`](https://wiki.archlinux.org/index.php/Installation_guide)!
+
+
 
 
 
@@ -16,7 +18,8 @@ timedatectl set-ntp true
 
 To check the service status, use `timedatectl status`
 
-## Load keys
+## Load keys (The default console keymap is US)
+`(skip this if you use US keymap)`
 
 `localectl list-keymaps` <\-\- list all keymaps
 
@@ -60,7 +63,7 @@ station wlan0 connect "Name of Network/WiFi"
 Test internet
 
 ```
-ping google.com -c 3
+ping -c4 google.com
 ```
 
 ## Partitioning
@@ -77,7 +80,9 @@ Choose the disk you want to use
 Disk is usually `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1`
 ![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
-**Create at least 300M EFI system.** Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
+**Create at least 300M EFI system. For 2 kernel 512M or more** 
+[`Kernel - Arch wiki`](https://wiki.archlinux.org/title/Kernel)
+Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
 
 ![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
 
