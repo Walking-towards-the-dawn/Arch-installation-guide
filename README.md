@@ -263,7 +263,7 @@ type: reboot
 enter your username and password
 ```
 
-## Plasma, Display, Sound
+## After reboot, install Plasma, Display, Sound
 
 GPU driver
 
