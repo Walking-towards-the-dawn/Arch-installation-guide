@@ -18,7 +18,7 @@ timedatectl set-ntp true
 
 To check the service status, use `timedatectl status`
 
-## Load keys (The default console keymap is US)
+## Load keys
 `(skip this if you use US keymap)`
 
 `localectl list-keymaps` <\-\- list all keymaps
