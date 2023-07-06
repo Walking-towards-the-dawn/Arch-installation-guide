@@ -60,6 +60,9 @@ Connect to your target Wi-Fi:
 station wlan0 connect "Name of Network/WiFi"
 ```
 
+After entering the password
+exit or quit
+
 Test internet
 
 ```
@@ -103,7 +106,7 @@ After you review Partition Table select "Write", answer with "yes" in order to a
 mkfs.fat -F32 /dev/(efi partition)
 ```
 ```
-mkfs.ext4 /dev/(root partion)
+mkfs.ext4(or other file system) /dev/(root partion)
 ```
 
 **Mount partitions**
@@ -252,9 +255,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 **Reboot and log in -->**
-
 ```
+exit
+umount -l /mnt
 type: reboot
+
 enter your username and password
 ```
 
@@ -289,12 +294,4 @@ Enable trim
 ```
 sudo systemctl enable fstrim.timer
 ```
-## Finish
-
-exit
-
-umount -l /mnt
-
-reboot
-
-Enjoy!
+## Reboot and enjoy!
