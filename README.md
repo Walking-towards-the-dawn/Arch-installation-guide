@@ -83,8 +83,8 @@ Choose the disk you want to use
 Disk is usually `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1`
 ![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
-**Create at least 300M EFI system. For 2 kernel 512M or more** 
-[`Kernel - Arch wiki`](https://wiki.archlinux.org/title/Kernel)
+**Create at least 300M EFI system. For 2 kernel 512M or more. You can read about kernels here** 
+[`Kernel - Arch wiki`](https://wiki.archlinux.org/title/Kernel).
 Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
 
 ![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
