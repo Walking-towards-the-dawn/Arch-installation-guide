@@ -61,7 +61,7 @@ station wlan0 connect "Name of Network/WiFi"
 ```
 
 After entering the password
-exit or quit
+exit (or quit)
 
 Test internet
 
@@ -73,8 +73,11 @@ ping -c4 google.com
 
 **List your disks**
 
-`fdisk -l` (will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
+`fdisk -l` (or lsblk)(will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
 ![Screenshot_20220816_204521](https://user-images.githubusercontent.com/95308907/184945038-16875f8b-dd70-459e-91ee-82784ae5caa3.png)
+
+**If necessary, you can remove the discs**
+sudo wipefs -aal /dev/(disk name)
 
 **Make root and EFI-partitions**
 
@@ -197,7 +200,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
 
-Set hostname
+Set hostname:
 ```
 echo "yourhostname" > /etc/hostname
 ```
@@ -205,7 +208,7 @@ echo "yourhostname" > /etc/hostname
 
 Set up host file (not necessary anymore if you don't need hostfile)
 ```
-touch /etc/hosts
+nano /etc/hosts
 ```
 ```
 127.0.0.1	localhost
@@ -220,7 +223,7 @@ touch /etc/hosts
 pacman -S networkmanager network-manager-applet intel-ucode(or amd-ucode) wireless_tools grub efibootmgr bluez bluez-utils power-profiles-daemon
 ```
 
-Enable Network and bluetooth
+Enable Network and bluetooth:
 
 ```
 systemctl enable NetworkManager
@@ -231,17 +234,19 @@ systemctl enable bluetooth.service
 ## Set your user
 
 ```
-passwd <-- password for root
+passwd    <-- password for root
 useradd -m -G wheel (username)
-passwd (username) <-- passwor for user
+passwd (username)    <-- passwor for user
 EDITOR=nano visudo
-(uncomment) ->  %wheel ALL=(ALL) ALL)
+%wheel ALL=(ALL:ALL) ALL)    <--(uncomment)
 ```
-
+In nano after uncoment:
+Ctrl + O    <-- save
+Ctrl + X    <-- quit
 
 ## GRUB install
 
-Install GRUB
+Install GRUB:
 
 ```
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
@@ -257,39 +262,41 @@ grub-mkconfig -o /boot/grub/grub.cfg
 **Reboot and log in -->**
 ```
 exit
+
 umount -l /mnt
+
 type: reboot
 
-enter your username and password
+Enter your username and password
 ```
 
 ## After reboot, install Plasma, Display, Sound
 
-GPU driver
+*GPU driver:*
 
 ```
 sudo pacman -S xf86-video-amdgpu (xf86-video-your gpu type, see the wiki)
 ```
 
-Pipewire audio drivers
+*Pipewire audio drivers:*
 
 ```
 sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber gst-plugin-pipewire --needed
 ```
 
-KDE Desktop Enverioment and Software
+*KDE Desktop Enverioment and Software:*
 
 ```
 sudo pacman -S  plasma dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
 ```
 
-Enable sddm
+*Enable sddm:*
 
 ```
 sudo systemctl enable sddm
 ```
 
-Enable trim
+*Enable trim:*
 
 ```
 sudo systemctl enable fstrim.timer
