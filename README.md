@@ -112,7 +112,9 @@ mkfs.ext4(or other file system) /dev/(root partion)
 
 ```
 mount /dev/(root partition name) /mnt
+
 mkdir -p /mnt/boot/efi
+
 mount /dev/(efi partition name) /mnt/boot/efi
 ```
 
@@ -231,9 +233,13 @@ systemctl enable bluetooth.service
 
 ```
 passwd    <-- password for root
+
 useradd -m -G wheel (username)
+
 passwd (username)    <-- passwor for user
+
 EDITOR=nano visudo
+
 %wheel ALL=(ALL:ALL) ALL)    <--(uncomment)
 ```
 In nano after uncoment:
@@ -328,12 +334,16 @@ ParallelDownloads=5        <--(uncomment)
 **Installation AUR**
 ```
 git clone https://aur.archlinux.org/paru.git
+
 cd paru
+
 makepkg -si
+
 paru
 ```
 **Installation YAY**
 ```
-git clone https://aur.archlinux.org/yay.git 
+git clone https://aur.archlinux.org/yay.git
+
 makepkg -sric
 ```
