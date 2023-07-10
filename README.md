@@ -268,7 +268,9 @@ Enter your username and password
 
 ## After reboot, install Plasma, Display, Sound
 `(skip this if you use ethernet)`
+
 Connect to WiFi:
+
 First way
 ```
 nmcli device(or d) wifi connect SDT-wifi(name wifi) password password(your password)
@@ -321,7 +323,7 @@ sudo reflector --verbose --country 'Germany'(your country) --protocol https -l 1
 ```
 sudo nano /etc/pacman.conf
 ```
-ParallelDownloads=5    <--(uncomment)
+ParallelDownloads=5        <--(uncomment)
 
 **Installation AUR**
 ```
